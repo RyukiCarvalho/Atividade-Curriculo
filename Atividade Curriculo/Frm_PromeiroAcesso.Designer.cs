@@ -140,7 +140,7 @@
             // btn_limpar
             // 
             this.btn_limpar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_limpar.Location = new System.Drawing.Point(595, 204);
+            this.btn_limpar.Location = new System.Drawing.Point(586, 204);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(78, 34);
             this.btn_limpar.TabIndex = 8;

@@ -211,7 +211,6 @@ namespace Atividade_Curriculo
                 return validar;
             }
         }
-
         public class Dados
         {
             public string Nome { get; set; }
@@ -238,7 +237,6 @@ namespace Atividade_Curriculo
             public string Qualidades2 { get; set; }
             public string Qualidades3 { get; set; }
             public string Qualidades4 { get; set; }
-
             public void Fichario(string DiretorioJson)
             {
                 var CurriculoJson = SerializeObject(this);
@@ -255,17 +253,14 @@ namespace Atividade_Curriculo
 
             }
         }
-
         public static Dados DeserializeObject(string C)
         {
             return JsonConvert.DeserializeObject<Dados>(C);
         }
-
         public static string SerializeObject(Dados dados)
         {
             return JsonConvert.SerializeObject(dados);
         }
-
 
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 
 namespace Atividade_Curriculo
 {
@@ -22,10 +23,26 @@ namespace Atividade_Curriculo
             if (chk_mostrarenhanova.Checked)
             {
                 txt_senhaNova.PasswordChar = '\0';
+                txt_SenhaAntiga.PasswordChar = '\0';
             }
             else
             {
                 txt_senhaNova.PasswordChar = '*';
+                txt_SenhaAntiga.PasswordChar = '*';
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cls_usuario UsuárioSenha = new Cls_usuario(" Usuário");
+
+            if (txt_NomeDoUsuario.Text == "" && txt_SenhaAntiga.Text == "" && txt_SenhaAntiga.Text == "")
+            {
+                MessageBox.Show("Prencha todos os campos ! ");
+            }
+            else
+            {
+                
             }
         }
     }

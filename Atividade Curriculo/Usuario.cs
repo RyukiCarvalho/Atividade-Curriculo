@@ -10,6 +10,7 @@ using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using System.Security.Policy;
 using System.IO;
+using Atividade_Curriculo;
 
 namespace Atividade_Curriculo
 {
@@ -43,7 +44,7 @@ namespace Atividade_Curriculo
 
             try
             {
-                File.AppendAllText(caminhoUsuario,User);
+                File.AppendAllText(caminhoUsuario, User);
                 status = true;
                 mensagem = "Usuário salvo com Sucesso." + nome;
             }
@@ -54,11 +55,33 @@ namespace Atividade_Curriculo
             }
         }
 
+        public void validarLogin(string login, string Senha)
+        {
+            if (File.Exists(caminhoUsuario))
+            {
+                var textoDosUsuarios = File.ReadAllText(caminhoUsuario);
 
+                string[] Usuário = textoDosUsuarios.Split();
+                for (int i = 0; i < Usuário.Length -1; i++)
+                {
+                    string linha = Usuário[i];
+                    string Usuario = linha.Split(';')[0];
+                    string senha = linha.Split(';')[1];
+                    if (login == Usuario && Senha == senha)
+                    {
+                        MessageBox.Show("Seja bem vindo!");
+                        Form1 Curriculo = new Form1();
+                        Curriculo.Show();
+                        return;
+                    }  
+                }
+                MessageBox.Show("Usuário ou senha incorretas");
+            }
+        }
     }
 }
 
 
 
-    
+
 

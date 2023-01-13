@@ -18,7 +18,6 @@ namespace Atividade_Curriculo
 
 
             txt_InformeBlog.Enabled = false;
-
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("AC");
             Cmb_Estados.Items.Add("AL");
@@ -77,7 +76,6 @@ namespace Atividade_Curriculo
             Tls_Principal.Items[3].ToolTipText = "Excluidno Cliente";
             Tls_Principal.Items[4].ToolTipText = "Alterando Currículo";
             AtualizaArGrid();
-
             LimparCurriculo();
         }
 
@@ -91,12 +89,10 @@ namespace Atividade_Curriculo
             {
                 txt_InformeBlog.Enabled = true;
             }
-
             if (Cmb_Blog.Text != "Sim")
             {
 
             }
-
         }
 
         private void Tls_salvar_Click(object sender, EventArgs e)
@@ -184,9 +180,7 @@ namespace Atividade_Curriculo
                     {
                         MessageBox.Show("Não foi possivel salvar o seu Currículo " + sa.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                     AtualizaArGrid();
-
                     LimparCurriculo();
                 }
             }
@@ -342,7 +336,6 @@ namespace Atividade_Curriculo
                 row.Cells[2].Value = listaBusca[i][1].ToString();
 
                 DG_Curriculo.Rows.Add(row);
-
             }
         }
 
@@ -375,7 +368,6 @@ namespace Atividade_Curriculo
 
         private void Tls_Duvidas_Click(object sender, EventArgs e)
         {
-
             Frm_Duvidas D = new Frm_Duvidas();
             D.ShowDialog();
         }
@@ -414,7 +406,6 @@ namespace Atividade_Curriculo
                     {
 
                     }
-
                 }
 
                 AtualizaArGrid();
@@ -505,6 +496,11 @@ namespace Atividade_Curriculo
         }
 
         private void Lbl_Outras_Informações_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }

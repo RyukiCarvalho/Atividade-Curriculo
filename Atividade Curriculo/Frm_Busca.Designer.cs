@@ -44,7 +44,7 @@
             this.toolStripButton3});
             this.Tls_Principal.Location = new System.Drawing.Point(0, 0);
             this.Tls_Principal.Name = "Tls_Principal";
-            this.Tls_Principal.Size = new System.Drawing.Size(349, 25);
+            this.Tls_Principal.Size = new System.Drawing.Size(344, 25);
             this.Tls_Principal.TabIndex = 22;
             this.Tls_Principal.Text = "toolStrip1";
             this.Tls_Principal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Tls_Principal_ItemClicked);
@@ -90,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 343);
+            this.ClientSize = new System.Drawing.Size(344, 341);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Lst_Busca);
             this.Controls.Add(this.Tls_Principal);

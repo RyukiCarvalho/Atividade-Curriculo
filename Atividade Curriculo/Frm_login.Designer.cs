@@ -106,7 +106,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(150, 287);
+            this.label8.Location = new System.Drawing.Point(166, 287);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(152, 32);
             this.label8.TabIndex = 12;
@@ -115,7 +115,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(88, 327);
+            this.pictureBox1.Location = new System.Drawing.Point(88, 324);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +138,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.linkLabel1.ForeColor = System.Drawing.Color.Black;
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(150, 342);
+            this.linkLabel1.Location = new System.Drawing.Point(150, 338);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(201, 19);
             this.linkLabel1.TabIndex = 18;
@@ -233,5 +233,6 @@
         private CheckBox chk_Mostrasenha;
         private LinkLabel linkLabel2;
         private Label label4;
+        private ColorDialog colorDialog1;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Atividade_Curriculo
 {
@@ -17,46 +18,19 @@ namespace Atividade_Curriculo
         {
             InitializeComponent();
         }
-
+        public string Mensagem;
+        public bool Status;
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-            if(txt_usuario.Text == "" || txt_senha.Text == "")
+            if (txt_usuario.Text == "" || txt_senha.Text == "")
             {
-               MessageBox.Show("Prencha todos os campos!");
+                MessageBox.Show("Prencha todos os campos !");
             }
             else
             {
                 Cls_usuario AcessoLogin = new Cls_usuario(" Usuário");
-                if (File.Exists(AcessoLogin.caminhoUsuario))
-                {
-                    string textoDosUsuarios = File.ReadAllText(AcessoLogin.caminhoUsuario);
+                AcessoLogin.validarLogin(txt_usuario.Text, txt_senha.Text); 
 
-                    try
-                    {
-                        foreach (string linha in textoDosUsuarios.Split())
-                        {
-                            string Usuario = linha.Split(';')[0];
-                            string senha = linha.Split(';')[1];
-
-                            if (txt_usuario.Text == Usuario && txt_senha.Text == senha)
-                            {
-                                MessageBox.Show("Seja bem vindo!");
-                                Form1 Curriculo = new Form1();
-                                Curriculo.Show();
-                                
-                            }
-                            else
-                            {
-                                MessageBox.Show("Usuário ou senha incorretas");
-                            }
-
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        
-                    }               
-                }
             }
         }
 

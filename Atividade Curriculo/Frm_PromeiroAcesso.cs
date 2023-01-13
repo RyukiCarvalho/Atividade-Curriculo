@@ -41,17 +41,17 @@ namespace Atividade_Curriculo
                         }
                         else
                         {
-                            MessageBox.Show("Err: Esse usuario com esse nome já esxiste ", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Esse usuario com esse nome já esxiste ", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Err: não foi possivel salvar seu usuário", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Não foi possivel salvar seu usuário", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("As suas senhas estão erradas confira para ver se tem algo errada ", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("As senhas não estão iguais confira elas novamente", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             
