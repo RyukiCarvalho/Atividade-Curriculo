@@ -37,7 +37,7 @@ namespace Atividade_Curriculo
                         if (salvar.status)
                         {
                             MessageBox.Show("Seu usuario foi criado com sucesso", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                           
                         }
                         else
                         {

@@ -75,7 +75,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(-4, -1);
             this.label1.Name = "label1";
@@ -124,7 +124,7 @@
             // 
             // btn_entrar
             // 
-            this.btn_entrar.Location = new System.Drawing.Point(353, 206);
+            this.btn_entrar.Location = new System.Drawing.Point(353, 207);
             this.btn_entrar.Name = "btn_entrar";
             this.btn_entrar.Size = new System.Drawing.Size(72, 23);
             this.btn_entrar.TabIndex = 3;
@@ -141,7 +141,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(150, 338);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(201, 19);
-            this.linkLabel1.TabIndex = 18;
+            this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Crie seu primeiro acesso";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -162,7 +162,7 @@
             this.chk_Mostrasenha.Location = new System.Drawing.Point(133, 178);
             this.chk_Mostrasenha.Name = "chk_Mostrasenha";
             this.chk_Mostrasenha.Size = new System.Drawing.Size(107, 19);
-            this.chk_Mostrasenha.TabIndex = 19;
+            this.chk_Mostrasenha.TabIndex = 4;
             this.chk_Mostrasenha.Text = "Mostrar Senha";
             this.chk_Mostrasenha.UseVisualStyleBackColor = true;
             this.chk_Mostrasenha.CheckedChanged += new System.EventHandler(this.chk_Mostrasenha_CheckedChanged);
@@ -176,7 +176,7 @@
             this.linkLabel2.Location = new System.Drawing.Point(54, 233);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(84, 19);
-            this.linkLabel2.TabIndex = 20;
+            this.linkLabel2.TabIndex = 5;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Alterar Senha";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
@@ -210,6 +210,8 @@
             this.Controls.Add(this.txt_usuario);
             this.Controls.Add(this.lbl_senha);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Frm_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
