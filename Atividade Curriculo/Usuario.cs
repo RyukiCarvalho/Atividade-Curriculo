@@ -44,16 +44,31 @@ namespace Atividade_Curriculo
         }
         public void Incluir(string nome, string User)
         {
-
             try
             {
-                File.AppendAllText(caminhoUsuario, User);
-                status = true;
-                mensagem = "Usuário salvo com Sucesso." + nome;
+                if (File.Exists(caminhoUsuario))
+                {
+                    var ler = File.ReadAllText(caminhoUsuario);
                     
-                  
-                status = false;
-                mensagem = "Usuário não pode ser salvo pois ja existe outro com esse nome." + nome;
+                    if(ler.Contains(nome))
+                    {
+                        mensagem = "Usuario já existe";
+                        status = false;
+
+                    }
+                    else
+                    {
+                       
+                        File.AppendAllText(caminhoUsuario, User);
+                        status = true;
+                        mensagem = "Usuário salvo com Sucesso." + nome;
+                    }
+                }
+                else
+                {
+                    File.AppendAllText(caminhoUsuario, User);
+
+                }
 
             }
             catch (Exception ex)
@@ -87,7 +102,7 @@ namespace Atividade_Curriculo
             }
         }
 
-        public bool RecuperarSenha(string Login, string senha)
+        public bool AlterarSenha(string Login, string senha, string SenhaNova)
         {
             if (File.Exists(caminhoUsuario))
             {
@@ -102,13 +117,14 @@ namespace Atividade_Curriculo
                     if (Login == Usuario && Senha == senha)
                     {
                         MessageBox.Show("Sua senha e usuario estão corretos já pode mudar sua senha");
+
+                        // textoDosUsuarios.Remove();
+                        //  File.WriteAllText(caminhoUsuario, $"{Usuario};{SenhaNova}\n");
                         return true;
                     }
-                    
                 }
                 MessageBox.Show("Seu usuario ou senha estão incorretos, por favor verifique");
             }
-
             return false;
         }
     }

@@ -45,23 +45,9 @@ namespace Atividade_Curriculo
             {
                 Cls_usuario AcessoLogin = new Cls_usuario(" Usuário");
 
-                if(AcessoLogin.RecuperarSenha(txt_NomeDoUsuario.Text, txt_SenhaAntiga.Text))
-                {
-                    if (txt_SenhaAntiga.Text == "")
-                    {
-                        MessageBox.Show("Digite a senha");
-                    }
-                    else
-                    {
-                        string SenhaNova = txt_SenhaAntiga.Text;
-                        File.Delete(AcessoLogin.senha);
-                        File.AppendAllText(AcessoLogin.caminhoUsuario, SenhaNova);
-                    }
-
-                }
-
+                AcessoLogin.AlterarSenha(txt_NomeDoUsuario.Text, txt_SenhaAntiga.Text, txt_senhaNova.Text);
+               
             }
         }
     }
-    
 }

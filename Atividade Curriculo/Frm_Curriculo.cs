@@ -436,7 +436,6 @@ namespace Atividade_Curriculo
 
         //inutil 
 
-
         private void Form1_Load(object sender, EventArgs e)
         { }
 
