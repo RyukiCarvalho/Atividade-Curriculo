@@ -84,14 +84,11 @@ namespace Atividade_Curriculo
             if (Cmb_Blog.Text != "Sim")
             {
                 txt_InformeBlog.Enabled = false;
+                LimparCurriculo();
             }
             else
             {
                 txt_InformeBlog.Enabled = true;
-            }
-            if (Cmb_Blog.Text != "Sim")
-            {
-
             }
         }
 
@@ -141,13 +138,13 @@ namespace Atividade_Curriculo
                     Curriculo += "Qualidade: " + Txt_SiteQUali4.Text + "" + "\n";
                 }
 
-                if (Cls_Util.Unit.ValidarTelefone(Txt_Telefone.Text) && Cls_Util.Unit.ValidarCep(Txt_cep.Text) 
-                    && Cls_Util.Unit.ValidarBlogOuSite(txt_InformeBlog.Text, Cmb_Blog.Text) 
+                if (Cls_Util.Unit.ValidarTelefone(Txt_Telefone.Text) && Cls_Util.Unit.ValidarCep(Txt_cep.Text)
+                    && Cls_Util.Unit.ValidarBlogOuSite(txt_InformeBlog.Text, Cmb_Blog.Text)
                     && Cls_Util.Unit.ValidaLogradouro(Txt_Logradouro.Text)
                     && Cls_Util.Unit.ValidarEmail(Txt_Email.Text) && Cls_Util.Unit.ValidarNumero(Txt_Numero.Text)
-                    && Cls_Util.Unit.ValidarBairro(Txt_Bairro.Text) && Cls_Util.Unit.ValidarCidade(Txt_Cidade.Text) 
+                    && Cls_Util.Unit.ValidarBairro(Txt_Bairro.Text) && Cls_Util.Unit.ValidarCidade(Txt_Cidade.Text)
                     && Cls_Util.Unit.Validarquali(Txt_SiteQUali.Text, Txt_SiteQUali2.Text, Txt_SiteQUali3.Text)
-                    && Cls_Util.Unit.ValidarCurso(Txt_Curso.Text) && Cls_Util.Unit.ValidarId(Txt_Id.Text,"Salvar Json"))
+                    && Cls_Util.Unit.ValidarCurso(Txt_Curso.Text) && Cls_Util.Unit.ValidarId(Txt_Id.Text, "Salvar Json"))
                 {
                     salvar s = new salvar("Salvar");
                     if (s.Status)
@@ -431,77 +428,6 @@ namespace Atividade_Curriculo
                     escreve(C);
                 }
             }
-        }
-
-
-        //inutil 
-
-        private void Form1_Load(object sender, EventArgs e)
-        { }
-
-        private void label2_Click(object sender, EventArgs e)
-        { }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        { }
-
-        private void Cmb_Emprego_SelectedIndexChanged(object sender, EventArgs e)
-        { }
-
-        private void Cmb_Estados_SelectedIndexChanged(object sender, EventArgs e)
-        { }
-
-        private void Txt_Nome_TextChanged(object sender, EventArgs e)
-        { }
-
-        private void Txt_Nome_Click(object sender, EventArgs e)
-        { }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        { }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        { }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        { }
-
-        private void Lbl_Qualificaçôes_Click(object sender, EventArgs e)
-        { }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        { }
-
-        private void label3_Click(object sender, EventArgs e)
-        { }
-
-        private void Grp_OutrasInformações_Enter(object sender, EventArgs e)
-        { }
-
-        private void Txt_Numero_TextChanged(object sender, EventArgs e)
-        { }
-
-        private void Lbl_Nome_Click(object sender, EventArgs e)
-        { }
-
-        private void Txt_Cep_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cmb_Emprego_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Lbl_Outras_Informações_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
