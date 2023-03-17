@@ -26,14 +26,15 @@ namespace Atividade_Curriculo
             }
             else
             {
-                string user = "" + txt_primeirouser.Text + ";" + "" + txt_senhap.Text + "\n";
+                string user = "" + txt_primeirouser.Text + ";" + "" + txt_senhap.Text;
 
                 if (txt_senhap.Text == txt_Confrimarsenha.Text)
                 {
                     Cls_usuario salvar = new Cls_usuario("Usuário");
                     if (salvar.status)
                     {
-                        salvar.Incluir(txt_primeirouser.Text, user);
+                                                                //teste
+                        salvar.Incluir(txt_primeirouser.Text,txt_senhap.Text,user) ;
                         if (salvar.status)
                         {
                             MessageBox.Show("Seu usuario foi criado com sucesso", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);

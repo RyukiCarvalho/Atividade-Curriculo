@@ -25,6 +25,8 @@ namespace Atividade_Curriculo
         public string mensagem;
         public string salve;
         public string caminhoUsuario = "Usuário.txt";
+        public string caminhoUsuarioCiper = "Usuáriocripter.txt";
+
 
         public Cls_usuario(string Usuário)
         {
@@ -42,31 +44,36 @@ namespace Atividade_Curriculo
 
 
         }
-        public void Incluir(string nome, string User)
+        //teste
+        public void Incluir(string nome, string senha, string User)
         {
             try
             {
-                if (File.Exists(caminhoUsuario))
+
+                var textociper = Cls_ciper.Encrypt(nome);
+                var textoSenha = Cls_ciper.Encrypt(senha);
+
+                if (File.Exists(caminhoUsuarioCiper))
                 {
-                    var ler = File.ReadAllText(caminhoUsuario);
-                    
-                    if(ler.Contains(nome))
+
+                    var ler = File.ReadAllText(caminhoUsuarioCiper);
+
+                    if (ler.Contains(textociper))
                     {
                         mensagem = "Usuario já existe";
                         status = false;
-
                     }
+
                     else
                     {
-                       
-                        File.AppendAllText(caminhoUsuario, User);
+                        File.AppendAllText(caminhoUsuarioCiper, textociper + ";" + textoSenha + "\n");
                         status = true;
                         mensagem = "Usuário salvo com Sucesso." + nome;
                     }
                 }
                 else
                 {
-                    File.AppendAllText(caminhoUsuario, User);
+                    File.AppendAllText(caminhoUsuarioCiper, textociper + ";" + textoSenha + "\n");
 
                 }
 
@@ -80,9 +87,12 @@ namespace Atividade_Curriculo
 
         public void validarLogin(string Login, string senha)
         {
-            if (File.Exists(caminhoUsuario))
+            if (File.Exists(caminhoUsuarioCiper))
             {
-                var textoDosUsuarios = File.ReadAllText(caminhoUsuario);
+                var textoDosUsuarios = File.ReadAllText(caminhoUsuarioCiper);
+
+                var loginciper = Cls_ciper.Encrypt(Login);
+                var texoSenhaciper = Cls_ciper.Encrypt(senha);
 
                 string[] Usuário = textoDosUsuarios.Split();
                 for (int i = 0; i < Usuário.Length - 1; i++)
@@ -90,8 +100,9 @@ namespace Atividade_Curriculo
                     string linha = Usuário[i];
                     string Usuario = linha.Split(';')[0];
                     string Senha = linha.Split(';')[1];
-                    if (Login == Usuario && Senha == senha)
+                    if (loginciper == Usuario && Senha == texoSenhaciper)
                     {
+                        
                         MessageBox.Show("Seja bem vindo!");
                         Form1 Curriculo = new Form1();
                         Curriculo.Show();
@@ -104,9 +115,13 @@ namespace Atividade_Curriculo
 
         public bool AlterarSenha(string Login, string senha, string SenhaNova)
         {
-            if (File.Exists(caminhoUsuario))
+            if (File.Exists(caminhoUsuarioCiper))
             {
-                var textoDosUsuarios = File.ReadAllText(caminhoUsuario);
+                var textoDosUsuarios = File.ReadAllText(caminhoUsuarioCiper);
+
+                var loginciperNovo = Cls_ciper.Encrypt(Login);
+                var texoSenhaciperNovo = Cls_ciper.Encrypt(senha);
+                var SenhaNovaCiper = Cls_ciper.Encrypt(SenhaNova);
 
                 string[] Usuário = textoDosUsuarios.Split();
                 for (int i = 0; i < Usuário.Length - 1; i++)
@@ -114,13 +129,20 @@ namespace Atividade_Curriculo
                     string linha = Usuário[i];
                     string Usuario = linha.Split(';')[0];
                     string Senha = linha.Split(';')[1];
-                    if (Login == Usuario && Senha == senha)
+                    if (loginciperNovo == Usuario && Senha == texoSenhaciperNovo)
                     {
-                        MessageBox.Show("Sua senha e usuario estão corretos já pode mudar sua senha");
 
-                        // textoDosUsuarios.Remove();
-                        //  File.WriteAllText(caminhoUsuario, $"{Usuario};{SenhaNova}\n");
+                        var Index = textoDosUsuarios.IndexOf(linha);
+
+                        var teste = Index + 1; 
+
+                        var texto2 = textoDosUsuarios.Remove(teste - 1, linha.Length + 1);
+
+                        File.WriteAllText(caminhoUsuarioCiper, $"{loginciperNovo};{SenhaNovaCiper}\n{texto2}");
+                        MessageBox.Show("Senha Alterada");
                         return true;
+
+                        
                     }
                 }
                 MessageBox.Show("Seu usuario ou senha estão incorretos, por favor verifique");
