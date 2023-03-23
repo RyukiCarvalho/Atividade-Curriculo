@@ -29,140 +29,140 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AlterarSenha));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lbl_NomeDoUsuario = new System.Windows.Forms.Label();
-            this.txt_NomeDoUsuario = new System.Windows.Forms.TextBox();
-            this.lbl_SenhaNova = new System.Windows.Forms.Label();
-            this.txt_senhaNova = new System.Windows.Forms.TextBox();
-            this.chk_mostrarenhanova = new System.Windows.Forms.CheckBox();
-            this.lbl_SenhaAntiga = new System.Windows.Forms.Label();
-            this.txt_SenhaAntiga = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            button1 = new Button();
+            lbl_NomeDoUsuario = new Label();
+            txt_NomeDoUsuario = new TextBox();
+            lbl_SenhaNova = new Label();
+            txt_senhaNova = new TextBox();
+            chk_mostrarenhanova = new CheckBox();
+            lbl_SenhaAntiga = new Label();
+            txt_SenhaAntiga = new TextBox();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(-7, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(345, 39);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alterar Senha";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.BackColor = Color.DarkSeaGreen;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(-7, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(345, 39);
+            label1.TabIndex = 0;
+            label1.Text = "Alterar Senha";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(-7, 397);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(345, 39);
-            this.label2.TabIndex = 1;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.BackColor = Color.DarkSeaGreen;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(-7, 397);
+            label2.Name = "label2";
+            label2.Size = new Size(345, 39);
+            label2.TabIndex = 1;
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(110, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Confrimar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(110, 336);
+            button1.Name = "button1";
+            button1.Size = new Size(92, 36);
+            button1.TabIndex = 4;
+            button1.Text = "Confrimar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // lbl_NomeDoUsuario
             // 
-            this.lbl_NomeDoUsuario.AutoSize = true;
-            this.lbl_NomeDoUsuario.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lbl_NomeDoUsuario.Location = new System.Drawing.Point(98, 58);
-            this.lbl_NomeDoUsuario.Name = "lbl_NomeDoUsuario";
-            this.lbl_NomeDoUsuario.Size = new System.Drawing.Size(132, 17);
-            this.lbl_NomeDoUsuario.TabIndex = 3;
-            this.lbl_NomeDoUsuario.Text = "Nome De Usuário";
+            lbl_NomeDoUsuario.AutoSize = true;
+            lbl_NomeDoUsuario.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lbl_NomeDoUsuario.Location = new Point(98, 58);
+            lbl_NomeDoUsuario.Name = "lbl_NomeDoUsuario";
+            lbl_NomeDoUsuario.Size = new Size(132, 17);
+            lbl_NomeDoUsuario.TabIndex = 3;
+            lbl_NomeDoUsuario.Text = "Nome De Usuário";
             // 
             // txt_NomeDoUsuario
             // 
-            this.txt_NomeDoUsuario.Location = new System.Drawing.Point(21, 90);
-            this.txt_NomeDoUsuario.Name = "txt_NomeDoUsuario";
-            this.txt_NomeDoUsuario.Size = new System.Drawing.Size(280, 23);
-            this.txt_NomeDoUsuario.TabIndex = 1;
+            txt_NomeDoUsuario.Location = new Point(21, 90);
+            txt_NomeDoUsuario.Name = "txt_NomeDoUsuario";
+            txt_NomeDoUsuario.Size = new Size(280, 23);
+            txt_NomeDoUsuario.TabIndex = 1;
             // 
             // lbl_SenhaNova
             // 
-            this.lbl_SenhaNova.AutoSize = true;
-            this.lbl_SenhaNova.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lbl_SenhaNova.Location = new System.Drawing.Point(110, 213);
-            this.lbl_SenhaNova.Name = "lbl_SenhaNova";
-            this.lbl_SenhaNova.Size = new System.Drawing.Size(92, 17);
-            this.lbl_SenhaNova.TabIndex = 6;
-            this.lbl_SenhaNova.Text = "Senha Nova";
+            lbl_SenhaNova.AutoSize = true;
+            lbl_SenhaNova.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lbl_SenhaNova.Location = new Point(110, 213);
+            lbl_SenhaNova.Name = "lbl_SenhaNova";
+            lbl_SenhaNova.Size = new Size(92, 17);
+            lbl_SenhaNova.TabIndex = 6;
+            lbl_SenhaNova.Text = "Senha Nova";
             // 
             // txt_senhaNova
             // 
-            this.txt_senhaNova.Location = new System.Drawing.Point(21, 248);
-            this.txt_senhaNova.MaxLength = 15;
-            this.txt_senhaNova.Name = "txt_senhaNova";
-            this.txt_senhaNova.PasswordChar = '*';
-            this.txt_senhaNova.Size = new System.Drawing.Size(280, 23);
-            this.txt_senhaNova.TabIndex = 3;
+            txt_senhaNova.Location = new Point(21, 248);
+            txt_senhaNova.MaxLength = 15;
+            txt_senhaNova.Name = "txt_senhaNova";
+            txt_senhaNova.PasswordChar = '*';
+            txt_senhaNova.Size = new Size(280, 23);
+            txt_senhaNova.TabIndex = 3;
+            txt_senhaNova.KeyDown += txt_senhaNova_KeyDown;
             // 
             // chk_mostrarenhanova
             // 
-            this.chk_mostrarenhanova.AutoSize = true;
-            this.chk_mostrarenhanova.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chk_mostrarenhanova.Location = new System.Drawing.Point(12, 294);
-            this.chk_mostrarenhanova.Name = "chk_mostrarenhanova";
-            this.chk_mostrarenhanova.Size = new System.Drawing.Size(107, 19);
-            this.chk_mostrarenhanova.TabIndex = 74;
-            this.chk_mostrarenhanova.Text = "Mostrar Senha";
-            this.chk_mostrarenhanova.UseVisualStyleBackColor = true;
-            this.chk_mostrarenhanova.CheckedChanged += new System.EventHandler(this.chk_mostrarenhanova_CheckedChanged);
+            chk_mostrarenhanova.AutoSize = true;
+            chk_mostrarenhanova.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            chk_mostrarenhanova.Location = new Point(12, 294);
+            chk_mostrarenhanova.Name = "chk_mostrarenhanova";
+            chk_mostrarenhanova.Size = new Size(107, 19);
+            chk_mostrarenhanova.TabIndex = 74;
+            chk_mostrarenhanova.Text = "Mostrar Senha";
+            chk_mostrarenhanova.UseVisualStyleBackColor = true;
+            chk_mostrarenhanova.CheckedChanged += chk_mostrarenhanova_CheckedChanged;
             // 
             // lbl_SenhaAntiga
             // 
-            this.lbl_SenhaAntiga.AutoSize = true;
-            this.lbl_SenhaAntiga.Font = new System.Drawing.Font("Arial", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lbl_SenhaAntiga.Location = new System.Drawing.Point(110, 132);
-            this.lbl_SenhaAntiga.Name = "lbl_SenhaAntiga";
-            this.lbl_SenhaAntiga.Size = new System.Drawing.Size(101, 17);
-            this.lbl_SenhaAntiga.TabIndex = 10;
-            this.lbl_SenhaAntiga.Text = "Senha Antiga";
+            lbl_SenhaAntiga.AutoSize = true;
+            lbl_SenhaAntiga.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lbl_SenhaAntiga.Location = new Point(110, 132);
+            lbl_SenhaAntiga.Name = "lbl_SenhaAntiga";
+            lbl_SenhaAntiga.Size = new Size(101, 17);
+            lbl_SenhaAntiga.TabIndex = 10;
+            lbl_SenhaAntiga.Text = "Senha Antiga";
             // 
             // txt_SenhaAntiga
             // 
-            this.txt_SenhaAntiga.Location = new System.Drawing.Point(21, 168);
-            this.txt_SenhaAntiga.MaxLength = 15;
-            this.txt_SenhaAntiga.Name = "txt_SenhaAntiga";
-            this.txt_SenhaAntiga.PasswordChar = '*';
-            this.txt_SenhaAntiga.Size = new System.Drawing.Size(280, 23);
-            this.txt_SenhaAntiga.TabIndex = 2;
+            txt_SenhaAntiga.Location = new Point(21, 168);
+            txt_SenhaAntiga.MaxLength = 15;
+            txt_SenhaAntiga.Name = "txt_SenhaAntiga";
+            txt_SenhaAntiga.PasswordChar = '*';
+            txt_SenhaAntiga.Size = new Size(280, 23);
+            txt_SenhaAntiga.TabIndex = 2;
             // 
             // Frm_AlterarSenha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 435);
-            this.Controls.Add(this.txt_SenhaAntiga);
-            this.Controls.Add(this.lbl_SenhaAntiga);
-            this.Controls.Add(this.chk_mostrarenhanova);
-            this.Controls.Add(this.txt_senhaNova);
-            this.Controls.Add(this.lbl_SenhaNova);
-            this.Controls.Add(this.txt_NomeDoUsuario);
-            this.Controls.Add(this.lbl_NomeDoUsuario);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Frm_AlterarSenha";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_AlterarSenha";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(333, 435);
+            Controls.Add(txt_SenhaAntiga);
+            Controls.Add(lbl_SenhaAntiga);
+            Controls.Add(chk_mostrarenhanova);
+            Controls.Add(txt_senhaNova);
+            Controls.Add(lbl_SenhaNova);
+            Controls.Add(txt_NomeDoUsuario);
+            Controls.Add(lbl_NomeDoUsuario);
+            Controls.Add(button1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "Frm_AlterarSenha";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Frm_AlterarSenha";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

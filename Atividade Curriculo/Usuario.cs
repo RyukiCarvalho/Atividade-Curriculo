@@ -44,7 +44,7 @@ namespace Atividade_Curriculo
 
 
         }
-        //teste
+
         public void Incluir(string nome, string senha, string User)
         {
             try
@@ -102,7 +102,6 @@ namespace Atividade_Curriculo
                     string Senha = linha.Split(';')[1];
                     if (loginciper == Usuario && Senha == texoSenhaciper)
                     {
-                        
                         MessageBox.Show("Seja bem vindo!");
                         Form1 Curriculo = new Form1();
                         Curriculo.Show();

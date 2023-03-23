@@ -41,8 +41,6 @@
             Txt_Logradouro = new TextBox();
             Grb_Dados_Pessoais = new GroupBox();
             Txt_cep = new TextBox();
-            Txt_Id = new TextBox();
-            Lbl_Id = new Label();
             Cmb_Estados = new ComboBox();
             Txt_Telefone = new TextBox();
             Lbl_Uf = new Label();
@@ -91,11 +89,13 @@
             Lbl_Trabalhoremoto = new Label();
             Cmb_Emprego = new ComboBox();
             Lbl_PrimeiroEmprego = new Label();
+            groupBox1 = new GroupBox();
             Grb_Dados_Pessoais.SuspendLayout();
             Grp_Qualificaçôes.SuspendLayout();
             Tls_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DG_Curriculo).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // lbl_Curriculo
@@ -154,8 +154,6 @@
             // 
             Grb_Dados_Pessoais.BackColor = SystemColors.Control;
             Grb_Dados_Pessoais.Controls.Add(Txt_cep);
-            Grb_Dados_Pessoais.Controls.Add(Txt_Id);
-            Grb_Dados_Pessoais.Controls.Add(Lbl_Id);
             Grb_Dados_Pessoais.Controls.Add(Cmb_Estados);
             Grb_Dados_Pessoais.Controls.Add(Txt_Telefone);
             Grb_Dados_Pessoais.Controls.Add(Lbl_Uf);
@@ -183,16 +181,6 @@
             // 
             resources.ApplyResources(Txt_cep, "Txt_cep");
             Txt_cep.Name = "Txt_cep";
-            // 
-            // Txt_Id
-            // 
-            resources.ApplyResources(Txt_Id, "Txt_Id");
-            Txt_Id.Name = "Txt_Id";
-            // 
-            // Lbl_Id
-            // 
-            resources.ApplyResources(Lbl_Id, "Lbl_Id");
-            Lbl_Id.Name = "Lbl_Id";
             // 
             // Cmb_Estados
             // 
@@ -485,20 +473,27 @@
             resources.ApplyResources(Lbl_PrimeiroEmprego, "Lbl_PrimeiroEmprego");
             Lbl_PrimeiroEmprego.Name = "Lbl_PrimeiroEmprego";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(Msk_Remuneração);
+            groupBox1.Controls.Add(txt_InformeBlog);
+            groupBox1.Controls.Add(Lbl_Remuneração);
+            groupBox1.Controls.Add(Lbl_InformeBlog);
+            groupBox1.Controls.Add(Lbl_PrimeiroEmprego);
+            groupBox1.Controls.Add(Cmb_Blog);
+            groupBox1.Controls.Add(Cmb_Emprego);
+            groupBox1.Controls.Add(Lbl_Blog);
+            groupBox1.Controls.Add(Lbl_Trabalhoremoto);
+            groupBox1.Controls.Add(Cmb_remoto);
+            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Name = "groupBox1";
+            groupBox1.TabStop = false;
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(txt_InformeBlog);
-            Controls.Add(Lbl_InformeBlog);
-            Controls.Add(Cmb_Blog);
-            Controls.Add(Lbl_Blog);
-            Controls.Add(Msk_Remuneração);
-            Controls.Add(Lbl_Remuneração);
-            Controls.Add(Cmb_remoto);
-            Controls.Add(Lbl_Trabalhoremoto);
-            Controls.Add(Cmb_Emprego);
-            Controls.Add(Lbl_PrimeiroEmprego);
+            Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Controls.Add(Lbl_Qualificaçôes);
             Controls.Add(label4);
@@ -520,6 +515,8 @@
             Tls_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)DG_Curriculo).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -572,8 +569,6 @@
         private ToolStripButton Tls_Alterar;
         private PictureBox pictureBox1;
         private DataGridView DG_Curriculo;
-        private TextBox Txt_Id;
-        private Label Lbl_Id;
         private DataGridViewButtonColumn Buscar;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nome;
@@ -588,5 +583,6 @@
         private Label Lbl_Trabalhoremoto;
         private ComboBox Cmb_Emprego;
         private Label Lbl_PrimeiroEmprego;
+        private GroupBox groupBox1;
     }
 }

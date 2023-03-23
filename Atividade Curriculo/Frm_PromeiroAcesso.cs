@@ -33,12 +33,12 @@ namespace Atividade_Curriculo
                     Cls_usuario salvar = new Cls_usuario("Usuário");
                     if (salvar.status)
                     {
-                                                                //teste
-                        salvar.Incluir(txt_primeirouser.Text,txt_senhap.Text,user) ;
+                        //teste
+                        salvar.Incluir(txt_primeirouser.Text, txt_senhap.Text, user);
                         if (salvar.status)
                         {
                             MessageBox.Show("Seu usuario foi criado com sucesso", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                           
+                            Close();
                         }
                         else
                         {
@@ -55,7 +55,7 @@ namespace Atividade_Curriculo
                     MessageBox.Show("As senhas não estão iguais confira elas novamente", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
 
         private void chk_Mostrarsenha_CheckedChanged(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace Atividade_Curriculo
                 txt_Confrimarsenha.PasswordChar = '*';
             }
         }
-      
+
 
         private void Limpar()
         {
@@ -86,9 +86,12 @@ namespace Atividade_Curriculo
             Limpar();
         }
 
-        private void txt_primeirouser_TextChanged(object sender, EventArgs e)
+        private void txt_Confrimarsenha_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if(e.KeyCode == Keys.Enter) 
+            {
+                btn_criar_Click(sender, e);
+            }
         }
     }
 }

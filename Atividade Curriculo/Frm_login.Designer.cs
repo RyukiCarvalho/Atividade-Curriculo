@@ -29,195 +29,195 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_login));
-            this.lbl_senha = new System.Windows.Forms.Label();
-            this.txt_usuario = new System.Windows.Forms.TextBox();
-            this.txt_senha = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_usuario = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_entrar = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chk_Mostrasenha = new System.Windows.Forms.CheckBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            lbl_senha = new Label();
+            txt_usuario = new TextBox();
+            txt_senha = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            lbl_usuario = new Label();
+            label8 = new Label();
+            pictureBox1 = new PictureBox();
+            btn_entrar = new Button();
+            linkLabel1 = new LinkLabel();
+            label3 = new Label();
+            chk_Mostrasenha = new CheckBox();
+            linkLabel2 = new LinkLabel();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // lbl_senha
             // 
-            this.lbl_senha.AutoSize = true;
-            this.lbl_senha.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_senha.Location = new System.Drawing.Point(54, 149);
-            this.lbl_senha.Name = "lbl_senha";
-            this.lbl_senha.Size = new System.Drawing.Size(61, 21);
-            this.lbl_senha.TabIndex = 1;
-            this.lbl_senha.Text = "Senha:";
+            lbl_senha.AutoSize = true;
+            lbl_senha.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_senha.Location = new Point(54, 149);
+            lbl_senha.Name = "lbl_senha";
+            lbl_senha.Size = new Size(61, 21);
+            lbl_senha.TabIndex = 1;
+            lbl_senha.Text = "Senha:";
             // 
             // txt_usuario
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(133, 85);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(218, 23);
-            this.txt_usuario.TabIndex = 1;
+            txt_usuario.Location = new Point(133, 85);
+            txt_usuario.Name = "txt_usuario";
+            txt_usuario.Size = new Size(218, 23);
+            txt_usuario.TabIndex = 1;
             // 
             // txt_senha
             // 
-            this.txt_senha.Location = new System.Drawing.Point(133, 149);
-            this.txt_senha.MaxLength = 15;
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.PasswordChar = '*';
-            this.txt_senha.Size = new System.Drawing.Size(218, 23);
-            this.txt_senha.TabIndex = 2;
+            txt_senha.Location = new Point(133, 149);
+            txt_senha.MaxLength = 15;
+            txt_senha.Name = "txt_senha";
+            txt_senha.PasswordChar = '*';
+            txt_senha.Size = new Size(218, 23);
+            txt_senha.TabIndex = 2;
+            txt_senha.KeyDown += txt_senha_KeyDown;
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(-4, -1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(441, 41);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Login";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label1.BackColor = Color.DarkSeaGreen;
+            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(-4, -1);
+            label1.Name = "label1";
+            label1.Size = new Size(441, 41);
+            label1.TabIndex = 4;
+            label1.Text = "Login";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label2.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.label2.Location = new System.Drawing.Point(-4, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 447);
-            this.label2.TabIndex = 5;
+            label2.BackColor = Color.DarkSeaGreen;
+            label2.ForeColor = Color.DarkSeaGreen;
+            label2.Location = new Point(-4, 19);
+            label2.Name = "label2";
+            label2.Size = new Size(33, 447);
+            label2.TabIndex = 5;
             // 
             // lbl_usuario
             // 
-            this.lbl_usuario.AutoSize = true;
-            this.lbl_usuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_usuario.Location = new System.Drawing.Point(54, 83);
-            this.lbl_usuario.Name = "lbl_usuario";
-            this.lbl_usuario.Size = new System.Drawing.Size(73, 21);
-            this.lbl_usuario.TabIndex = 11;
-            this.lbl_usuario.Text = "Usuário:";
+            lbl_usuario.AutoSize = true;
+            lbl_usuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_usuario.Location = new Point(54, 83);
+            lbl_usuario.Name = "lbl_usuario";
+            lbl_usuario.Size = new Size(73, 21);
+            lbl_usuario.TabIndex = 11;
+            lbl_usuario.Text = "Usuário:";
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(166, 287);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 32);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Crie seu Login";
+            label8.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(166, 287);
+            label8.Name = "label8";
+            label8.Size = new Size(152, 32);
+            label8.TabIndex = 12;
+            label8.Text = "Crie seu Login";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(88, 324);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(88, 324);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 45);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
             // 
             // btn_entrar
             // 
-            this.btn_entrar.Location = new System.Drawing.Point(353, 207);
-            this.btn_entrar.Name = "btn_entrar";
-            this.btn_entrar.Size = new System.Drawing.Size(72, 23);
-            this.btn_entrar.TabIndex = 3;
-            this.btn_entrar.Text = "Entrar";
-            this.btn_entrar.UseVisualStyleBackColor = true;
-            this.btn_entrar.Click += new System.EventHandler(this.btn_entrar_Click);
+            btn_entrar.Location = new Point(353, 207);
+            btn_entrar.Name = "btn_entrar";
+            btn_entrar.Size = new Size(72, 23);
+            btn_entrar.TabIndex = 3;
+            btn_entrar.Text = "Entrar";
+            btn_entrar.UseVisualStyleBackColor = true;
+            btn_entrar.Click += btn_entrar_Click;
             // 
             // linkLabel1
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkSeaGreen;
-            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.ForeColor = System.Drawing.Color.Black;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(150, 338);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(201, 19);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Crie seu primeiro acesso";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            linkLabel1.ActiveLinkColor = Color.DarkSeaGreen;
+            linkLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            linkLabel1.ForeColor = Color.Black;
+            linkLabel1.LinkColor = Color.Black;
+            linkLabel1.Location = new Point(150, 338);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(201, 19);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Crie seu primeiro acesso";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label3
             // 
-            this.label3.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label3.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.label3.Location = new System.Drawing.Point(22, 263);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(415, 10);
-            this.label3.TabIndex = 6;
+            label3.BackColor = Color.DarkSeaGreen;
+            label3.ForeColor = Color.DarkSeaGreen;
+            label3.Location = new Point(22, 263);
+            label3.Name = "label3";
+            label3.Size = new Size(415, 10);
+            label3.TabIndex = 6;
             // 
             // chk_Mostrasenha
             // 
-            this.chk_Mostrasenha.AutoSize = true;
-            this.chk_Mostrasenha.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.chk_Mostrasenha.Location = new System.Drawing.Point(133, 178);
-            this.chk_Mostrasenha.Name = "chk_Mostrasenha";
-            this.chk_Mostrasenha.Size = new System.Drawing.Size(107, 19);
-            this.chk_Mostrasenha.TabIndex = 4;
-            this.chk_Mostrasenha.Text = "Mostrar Senha";
-            this.chk_Mostrasenha.UseVisualStyleBackColor = true;
-            this.chk_Mostrasenha.CheckedChanged += new System.EventHandler(this.chk_Mostrasenha_CheckedChanged);
+            chk_Mostrasenha.AutoSize = true;
+            chk_Mostrasenha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            chk_Mostrasenha.Location = new Point(133, 178);
+            chk_Mostrasenha.Name = "chk_Mostrasenha";
+            chk_Mostrasenha.Size = new Size(107, 19);
+            chk_Mostrasenha.TabIndex = 4;
+            chk_Mostrasenha.Text = "Mostrar Senha";
+            chk_Mostrasenha.UseVisualStyleBackColor = true;
+            chk_Mostrasenha.CheckedChanged += chk_Mostrasenha_CheckedChanged;
             // 
             // linkLabel2
             // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.DarkSeaGreen;
-            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel2.ForeColor = System.Drawing.Color.Black;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(54, 233);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(84, 19);
-            this.linkLabel2.TabIndex = 5;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Alterar Senha";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            linkLabel2.ActiveLinkColor = Color.DarkSeaGreen;
+            linkLabel2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            linkLabel2.ForeColor = Color.Black;
+            linkLabel2.LinkColor = Color.Black;
+            linkLabel2.Location = new Point(54, 233);
+            linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(84, 19);
+            linkLabel2.TabIndex = 5;
+            linkLabel2.TabStop = true;
+            linkLabel2.Text = "Alterar Senha";
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label4.ForeColor = System.Drawing.Color.DarkSeaGreen;
-            this.label4.Location = new System.Drawing.Point(12, 404);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(425, 33);
-            this.label4.TabIndex = 21;
+            label4.BackColor = Color.DarkSeaGreen;
+            label4.ForeColor = Color.DarkSeaGreen;
+            label4.Location = new Point(12, 404);
+            label4.Name = "label4";
+            label4.Size = new Size(425, 33);
+            label4.TabIndex = 21;
             // 
             // Frm_login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 426);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.chk_Mostrasenha);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btn_entrar);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.lbl_usuario);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_senha);
-            this.Controls.Add(this.txt_usuario);
-            this.Controls.Add(this.lbl_senha);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Frm_login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(437, 426);
+            Controls.Add(label4);
+            Controls.Add(linkLabel2);
+            Controls.Add(chk_Mostrasenha);
+            Controls.Add(linkLabel1);
+            Controls.Add(btn_entrar);
+            Controls.Add(pictureBox1);
+            Controls.Add(label8);
+            Controls.Add(lbl_usuario);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txt_senha);
+            Controls.Add(txt_usuario);
+            Controls.Add(lbl_senha);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "Frm_login";
+            StartPosition = FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

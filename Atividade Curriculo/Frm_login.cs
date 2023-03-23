@@ -29,7 +29,7 @@ namespace Atividade_Curriculo
             else
             {
                 Cls_usuario AcessoLogin = new Cls_usuario(" Usuário");
-                AcessoLogin.validarLogin(txt_usuario.Text, txt_senha.Text); 
+                AcessoLogin.validarLogin(txt_usuario.Text, txt_senha.Text);
 
             }
         }
@@ -54,6 +54,14 @@ namespace Atividade_Curriculo
         {
             Frm_AlterarSenha senha = new Frm_AlterarSenha();
             senha.ShowDialog();
+        }
+
+        private void txt_senha_KeyDown(object sender, KeyEventArgs e)
+        {
+            if( e.KeyCode == Keys.Enter)
+            {
+                btn_entrar_Click(sender, e);
+            }
         }
     }
 }

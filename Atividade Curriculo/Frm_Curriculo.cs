@@ -12,6 +12,8 @@ namespace Atividade_Curriculo
 {
     public partial class Form1 : Form
     {
+        string IdCriado;
+
         public Form1()
         {
             InitializeComponent();
@@ -48,7 +50,6 @@ namespace Atividade_Curriculo
             Cmb_Estados.Items.Add("TO");
 
             lbl_Curriculo.Text = "Currículo";
-            Lbl_Id.Text = "Número indificador";
             Lbl_Nome.Text = "Nome Completo";
             Lbl_DataNasc.Text = "Data De Nascimento:";
             Lbl_Email.Text = "Email:";
@@ -73,7 +74,7 @@ namespace Atividade_Curriculo
             Tls_Principal.Items[0].ToolTipText = "Salvar Currículo";
             Tls_Principal.Items[1].ToolTipText = "Limpando o Currículo selecionado";
             Tls_Principal.Items[2].ToolTipText = "Duvidas entre aqui";
-            Tls_Principal.Items[3].ToolTipText = "Excluidno Cliente";
+            Tls_Principal.Items[3].ToolTipText = "Excluidno Currículo";
             Tls_Principal.Items[4].ToolTipText = "Alterando Currículo";
             AtualizaArGrid();
             LimparCurriculo();
@@ -84,7 +85,7 @@ namespace Atividade_Curriculo
             if (Cmb_Blog.Text != "Sim")
             {
                 txt_InformeBlog.Enabled = false;
-                LimparCurriculo();
+                txt_InformeBlog.Text = "";
             }
             else
             {
@@ -94,93 +95,104 @@ namespace Atividade_Curriculo
 
         private void Tls_salvar_Click(object sender, EventArgs e)
         {
-            {
-                string Curriculo = "Nome: " + Txt_Nome.Text + "" + "\n"
-                  + "Data De Nascimento: " + Msk_DataNasc.Text + "" + "\n"
-                  + "Email: " + Txt_Email.Text + "" + "\n"
-                  + "Telefone: " + Txt_Telefone.Text + "" + "\n"
-                  + "Logradouro: " + Txt_Logradouro.Text + "" + "\n"
-                  + "Número: " + Txt_Numero.Text + "" + "\n"
-                  + "Cep: " + Txt_cep.Text + "" + "\n"
-                  + "Bairro: " + Txt_Bairro.Text + "" + "\n"
-                  + "Cidade: " + Txt_Cidade.Text + "" + "\n"
-                  + "UF: " + Cmb_Estados.Text + "" + "\n"
-                  + "Primeiro Emprego: " + Cmb_Emprego.Text + "" + "\n"
-                  + "Interrese em trabalho remoto: " + Cmb_remoto.Text + "" + "\n"
-                  + "Remuneração Pretendida: " + Msk_Remuneração.Text + "" + "\n"
-                  + "Possui site ou Blog: " + Cmb_Blog.Text + "" + "\n"
-                  + "URL: " + txt_InformeBlog.Text + "" + "\n"
-                  + "Cursos: " + Txt_Curso.Text + "" + "\n"
-                  + "Número indificador: " + Txt_Id.Text + "" + "\n";
-                if (Txt_Curso2.Text != "")
-                {
-                    Curriculo += "Cursos: " + Txt_Curso2.Text + "" + "\n";
-                }
-                if (Txt_Curso3.Text != "")
-                {
-                    Curriculo += "Cursos: " + Txt_Curso3.Text + "" + "\n";
-                }
-                if (Txt_Curso4.Text != "")
-                {
-                    Curriculo += "Cursos: " + Txt_Curso4.Text + "" + "\n";
-                }
-                Curriculo += "Qualidade: " + Txt_SiteQUali.Text + "" + "\n";
-                if (Txt_SiteQUali2.Text != "")
-                {
-                    Curriculo += "Qualidade: " + Txt_SiteQUali2.Text + "" + "\n";
-                }
-                if (Txt_SiteQUali3.Text != "")
-                {
-                    Curriculo += "Qualidade: " + Txt_SiteQUali3.Text + "" + "\n";
-                }
-                if (Txt_SiteQUali4.Text != "")
-                {
-                    Curriculo += "Qualidade: " + Txt_SiteQUali4.Text + "" + "\n";
-                }
 
-                if (Cls_Util.Unit.ValidarTelefone(Txt_Telefone.Text) && Cls_Util.Unit.ValidarCep(Txt_cep.Text)
-                    && Cls_Util.Unit.ValidarBlogOuSite(txt_InformeBlog.Text, Cmb_Blog.Text)
-                    && Cls_Util.Unit.ValidaLogradouro(Txt_Logradouro.Text)
-                    && Cls_Util.Unit.ValidarEmail(Txt_Email.Text) && Cls_Util.Unit.ValidarNumero(Txt_Numero.Text)
-                    && Cls_Util.Unit.ValidarBairro(Txt_Bairro.Text) && Cls_Util.Unit.ValidarCidade(Txt_Cidade.Text)
-                    && Cls_Util.Unit.Validarquali(Txt_SiteQUali.Text, Txt_SiteQUali2.Text, Txt_SiteQUali3.Text)
-                    && Cls_Util.Unit.ValidarCurso(Txt_Curso.Text) && Cls_Util.Unit.ValidarId(Txt_Id.Text, "Salvar Json"))
+
+            Random random = new Random();
+
+            do
+            {
+                IdCriado = random.Next(999999).ToString();
+            } while (IdCriado.Length != 6 || File.Exists("Salvar" + "\\" + IdCriado));
+
+
+            string Curriculo = "Nome: " + Txt_Nome.Text + "" + "\n"
+              + "Data De Nascimento: " + Msk_DataNasc.Text + "" + "\n"
+              + "Email: " + Txt_Email.Text + "" + "\n"
+              + "Telefone: " + Txt_Telefone.Text + "" + "\n"
+              + "Logradouro: " + Txt_Logradouro.Text + "" + "\n"
+              + "Número: " + Txt_Numero.Text + "" + "\n"
+              + "Cep: " + Txt_cep.Text + "" + "\n"
+              + "Bairro: " + Txt_Bairro.Text + "" + "\n"
+              + "Cidade: " + Txt_Cidade.Text + "" + "\n"
+              + "UF: " + Cmb_Estados.Text + "" + "\n"
+              + "Primeiro Emprego: " + Cmb_Emprego.Text + "" + "\n"
+              + "Interrese em trabalho remoto: " + Cmb_remoto.Text + "" + "\n"
+              + "Remuneração Pretendida: " + Msk_Remuneração.Text + "" + "\n"
+              + "Possui site ou Blog: " + Cmb_Blog.Text + "" + "\n"
+              + "URL: " + txt_InformeBlog.Text + "" + "\n"
+              + "Cursos: " + Txt_Curso.Text + "" + "\n"
+              + "Número indificador: " + IdCriado + "" + "\n";
+            if (Txt_Curso2.Text != "")
+            {
+                Curriculo += "Cursos: " + Txt_Curso2.Text + "" + "\n";
+            }
+            if (Txt_Curso3.Text != "")
+            {
+                Curriculo += "Cursos: " + Txt_Curso3.Text + "" + "\n";
+            }
+            if (Txt_Curso4.Text != "")
+            {
+                Curriculo += "Cursos: " + Txt_Curso4.Text + "" + "\n";
+            }
+            Curriculo += "Qualidade: " + Txt_SiteQUali.Text + "" + "\n";
+            if (Txt_SiteQUali2.Text != "")
+            {
+                Curriculo += "Qualidade: " + Txt_SiteQUali2.Text + "" + "\n";
+            }
+            if (Txt_SiteQUali3.Text != "")
+            {
+                Curriculo += "Qualidade: " + Txt_SiteQUali3.Text + "" + "\n";
+            }
+            if (Txt_SiteQUali4.Text != "")
+            {
+                Curriculo += "Qualidade: " + Txt_SiteQUali4.Text + "" + "\n";
+            }
+
+            if (Cls_Util.Unit.ValidarTelefone(Txt_Telefone.Text) && Cls_Util.Unit.ValidarCep(Txt_cep.Text)
+                && Cls_Util.Unit.ValidarBlogOuSite(txt_InformeBlog.Text, Cmb_Blog.Text)
+                && Cls_Util.Unit.ValidaLogradouro(Txt_Logradouro.Text)
+                && Cls_Util.Unit.ValidarEmail(Txt_Email.Text) && Cls_Util.Unit.ValidarNumero(Txt_Numero.Text)
+                && Cls_Util.Unit.ValidarBairro(Txt_Bairro.Text) && Cls_Util.Unit.ValidarCidade(Txt_Cidade.Text)
+                && Cls_Util.Unit.Validarquali(Txt_SiteQUali.Text, Txt_SiteQUali2.Text, Txt_SiteQUali3.Text)
+                && Cls_Util.Unit.ValidarCurso(Txt_Curso.Text))
+            {
+
+                salvar s = new salvar("Salvar");
+                if (s.Status)
                 {
-                    salvar s = new salvar("Salvar");
+                    s.Incluir(IdCriado, Curriculo);
                     if (s.Status)
                     {
-                        s.Incluir(Txt_Id.Text, Curriculo);
-                        if (s.Status)
-                        {
-                            MessageBox.Show("Ok: " + s.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Err: " + s.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Ok: " + s.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
                         MessageBox.Show("Err: " + s.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    salvar sa = new salvar("Salvar Json");
-                    if (sa.Status)
-                    {
-                        Cls_Util.Dados C = new Cls_Util.Dados();
-                        C = Leitura();
-                        C.Fichario("Salvar Json");
-
-                        escreve(C);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Não foi possivel salvar o seu Currículo " + sa.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    AtualizaArGrid();
-                    LimparCurriculo();
                 }
+                else
+                {
+                    MessageBox.Show("Err: " + s.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                salvar sa = new salvar("Salvar Json");
+                if (sa.Status)
+                {
+                    //sa.IncluirJSon(IdCriado, Curriculo);
+                    Cls_Util.Dados C = new Cls_Util.Dados();
+                    C = Leitura();
+                    C.Fichario("Salvar Json");
+
+                    escreve(C);
+                }
+                else
+                {
+                    MessageBox.Show("Não foi possivel salvar o seu Currículo " + sa.mensagem, "Currículo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                AtualizaArGrid();
+                LimparCurriculo();
             }
+
         }
 
         private void LimparCurriculo()
@@ -208,7 +220,7 @@ namespace Atividade_Curriculo
             Txt_SiteQUali2.Text = "";
             Txt_SiteQUali3.Text = "";
             Txt_SiteQUali4.Text = "";
-            Txt_Id.Text = "";
+            IdCriado = "";
             txt_InformeBlog.Enabled = false;
         }
 
@@ -240,7 +252,7 @@ namespace Atividade_Curriculo
             C.Qualidades2 = Txt_SiteQUali2.Text;
             C.Qualidades3 = Txt_SiteQUali3.Text;
             C.Qualidades4 = Txt_SiteQUali4.Text;
-            C.Id = Txt_Id.Text;
+            C.Id = IdCriado;
             return C;
         }
 
@@ -270,7 +282,7 @@ namespace Atividade_Curriculo
             Txt_SiteQUali2.Text = C.Qualidades2;
             Txt_SiteQUali3.Text = C.Qualidades3;
             Txt_SiteQUali4.Text = C.Qualidades4;
-            Txt_Id.Text = C.Id;
+            IdCriado = C.Id;
         }
 
         private void Tls_limpar_Click(object sender, EventArgs e)
@@ -342,7 +354,7 @@ namespace Atividade_Curriculo
             salvar s = new salvar("Salvar Json");
             if (s.Status)
             {
-                s.ApagarJson(Txt_Id.Text);
+                s.ApagarJson(IdCriado);
             }
             if (s.Status)
             {
@@ -356,7 +368,7 @@ namespace Atividade_Curriculo
             salvar sa = new salvar("Salvar");
             if (sa.Status)
             {
-                sa.Apagar(Txt_Id.Text);
+                sa.Apagar(IdCriado);
             }
 
             AtualizaArGrid();

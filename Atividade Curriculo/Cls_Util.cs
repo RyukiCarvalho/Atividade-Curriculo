@@ -169,19 +169,19 @@ namespace Atividade_Curriculo
                 return validar;
             }
 
-            public static bool ValidarId(string Id, string DiretorioJson)
-            {
-                bool validar = false;
-                if (Id.Length == 6)
-                {
-                    validar = true;
-                }
-                else
-                {
-                    MessageBox.Show("o seu Id obrigatoriamente seis números");
-                }
-                return validar;
-            }
+            //public static bool ValidarId(string Id, string DiretorioJson)
+            //{
+            //    bool validar = false;
+            //    if (Id.Length == 6)
+            //    {
+            //        validar = true;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("o seu Id obrigatoriamente seis números");
+            //    }
+            //    return validar;
+            //}
 
             public static bool Validarquali(string Txt_SiteQUali, string Txt_SiteQUali2, string Txt_SiteQUali3)
             {

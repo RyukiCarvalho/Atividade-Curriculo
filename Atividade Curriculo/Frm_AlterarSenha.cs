@@ -45,8 +45,21 @@ namespace Atividade_Curriculo
             {
                 Cls_usuario AcessoLogin = new Cls_usuario(" Usuário");
 
-                AcessoLogin.AlterarSenha(txt_NomeDoUsuario.Text, txt_SenhaAntiga.Text, txt_senhaNova.Text);
-               
+                bool senha = AcessoLogin.AlterarSenha(txt_NomeDoUsuario.Text, txt_SenhaAntiga.Text, txt_senhaNova.Text);
+                
+                if(senha == true)
+                {
+                    Close();
+                }
+                
+            }
+        }
+
+        private void txt_senhaNova_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                button1_Click(sender, e);
             }
         }
     }
