@@ -108,10 +108,10 @@ namespace Atividade_Curriculo
             string Curriculo = "Nome: " + Txt_Nome.Text + "" + "\n"
               + "Data De Nascimento: " + Msk_DataNasc.Text + "" + "\n"
               + "Email: " + Txt_Email.Text + "" + "\n"
-              + "Telefone: " + Txt_Telefone.Text + "" + "\n"
+              + "Telefone: " + Msk_Telefone.Text + "" + "\n"
               + "Logradouro: " + Txt_Logradouro.Text + "" + "\n"
               + "Número: " + Txt_Numero.Text + "" + "\n"
-              + "Cep: " + Txt_cep.Text + "" + "\n"
+              + "Cep: " + msk_Cep.Text + "" + "\n"
               + "Bairro: " + Txt_Bairro.Text + "" + "\n"
               + "Cidade: " + Txt_Cidade.Text + "" + "\n"
               + "UF: " + Cmb_Estados.Text + "" + "\n"
@@ -148,7 +148,7 @@ namespace Atividade_Curriculo
                 Curriculo += "Qualidade: " + Txt_SiteQUali4.Text + "" + "\n";
             }
 
-            if (Cls_Util.Unit.ValidarTelefone(Txt_Telefone.Text) && Cls_Util.Unit.ValidarCep(Txt_cep.Text)
+            if (Cls_Util.Unit.ValidarTelefone(Msk_Telefone.Text) && Cls_Util.Unit.ValidarCep(msk_Cep.Text)
                 && Cls_Util.Unit.ValidarBlogOuSite(txt_InformeBlog.Text, Cmb_Blog.Text)
                 && Cls_Util.Unit.ValidaLogradouro(Txt_Logradouro.Text)
                 && Cls_Util.Unit.ValidarEmail(Txt_Email.Text) && Cls_Util.Unit.ValidarNumero(Txt_Numero.Text)
@@ -206,10 +206,10 @@ namespace Atividade_Curriculo
             Txt_Bairro.Text = "";
             txt_InformeBlog.Text = "";
             Txt_SiteQUali.Text = "";
-            Txt_cep.Text = "";
+            msk_Cep.Text = "";
             Msk_DataNasc.Text = "";
             Msk_Remuneração.Text = "";
-            Txt_Telefone.Text = "";
+            Msk_Telefone.Text = "";
             Cmb_Blog.Text = "";
             Cmb_Emprego.Text = "";
             Cmb_remoto.Text = "";
@@ -232,10 +232,10 @@ namespace Atividade_Curriculo
             C.Nome = Txt_Nome.Text;
             C.DataDeNascimento = Msk_DataNasc.Text;
             C.Email = Txt_Email.Text;
-            C.Telefone = Txt_Telefone.Text;
+            C.Telefone = Msk_Telefone.Text;
             C.Logradouro = Txt_Logradouro.Text;
             C.Numero = Txt_Numero.Text;
-            C.CEP = Txt_cep.Text;
+            C.CEP = msk_Cep.Text;
             C.Bairro = Txt_Bairro.Text;
             C.Cidade = Txt_Cidade.Text;
             C.Uf = Cmb_Estados.Text;
@@ -262,10 +262,10 @@ namespace Atividade_Curriculo
             Txt_Nome.Text = C.Nome;
             Msk_DataNasc.Text = C.DataDeNascimento;
             Txt_Email.Text = C.Email;
-            Txt_Telefone.Text = C.Telefone;
+            Msk_Telefone.Text = C.Telefone;
             Txt_Logradouro.Text = C.Logradouro;
             Txt_Numero.Text = C.Numero;
-            Txt_cep.Text = C.CEP;
+            msk_Cep.Text = C.CEP;
             Txt_Bairro.Text = C.Bairro;
             Txt_Cidade.Text = C.Cidade;
             Cmb_Estados.Text = C.Uf;
@@ -438,6 +438,37 @@ namespace Atividade_Curriculo
                     Cls_Util.Dados C = new Cls_Util.Dados();
                     C = Cls_Util.DeserializeObject(sg);
                     escreve(C);
+                }
+            }
+        }
+
+        // teste 
+        private void msk_Cep_Leave(object sender, EventArgs e)
+        {
+            string vCep = msk_Cep.Text.Replace("-","");
+            if (vCep != "")
+            {
+                if (vCep.Length == 8)
+                {
+                    if (Information.IsNumeric(vCep))
+                    {
+                        var vJson = Cls_Util.Unit.GeraJSONCEP(vCep);
+                        Cls_cep.Unit CEP = new Cls_cep.Unit();
+                        CEP = Cls_cep.DesSerializedClassUnit(vJson);
+                        Txt_Logradouro.Text = CEP.logradouro;
+                        Txt_Bairro.Text = CEP.bairro;
+                        Txt_Cidade.Text = CEP.localidade;
+
+                        Cmb_Estados.SelectedIndex = -1;
+                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
+                        {
+                            var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + CEP.uf + ")");
+                            if (vPos > 0)
+                            {
+                                Cmb_Estados.SelectedIndex = i;
+                            }
+                        }
+                    }
                 }
             }
         }

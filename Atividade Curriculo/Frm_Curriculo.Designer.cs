@@ -40,9 +40,9 @@
             Lbl_Logradouro = new Label();
             Txt_Logradouro = new TextBox();
             Grb_Dados_Pessoais = new GroupBox();
-            Txt_cep = new TextBox();
+            msk_Cep = new MaskedTextBox();
+            Msk_Telefone = new MaskedTextBox();
             Cmb_Estados = new ComboBox();
-            Txt_Telefone = new TextBox();
             Lbl_Uf = new Label();
             Txt_Cidade = new TextBox();
             Lbl_Cidade = new Label();
@@ -153,9 +153,9 @@
             // Grb_Dados_Pessoais
             // 
             Grb_Dados_Pessoais.BackColor = SystemColors.Control;
-            Grb_Dados_Pessoais.Controls.Add(Txt_cep);
+            Grb_Dados_Pessoais.Controls.Add(msk_Cep);
+            Grb_Dados_Pessoais.Controls.Add(Msk_Telefone);
             Grb_Dados_Pessoais.Controls.Add(Cmb_Estados);
-            Grb_Dados_Pessoais.Controls.Add(Txt_Telefone);
             Grb_Dados_Pessoais.Controls.Add(Lbl_Uf);
             Grb_Dados_Pessoais.Controls.Add(Txt_Cidade);
             Grb_Dados_Pessoais.Controls.Add(Lbl_Cidade);
@@ -177,10 +177,16 @@
             Grb_Dados_Pessoais.Name = "Grb_Dados_Pessoais";
             Grb_Dados_Pessoais.TabStop = false;
             // 
-            // Txt_cep
+            // msk_Cep
             // 
-            resources.ApplyResources(Txt_cep, "Txt_cep");
-            Txt_cep.Name = "Txt_cep";
+            resources.ApplyResources(msk_Cep, "msk_Cep");
+            msk_Cep.Name = "msk_Cep";
+            msk_Cep.Leave += msk_Cep_Leave;
+            // 
+            // Msk_Telefone
+            // 
+            resources.ApplyResources(Msk_Telefone, "Msk_Telefone");
+            Msk_Telefone.Name = "Msk_Telefone";
             // 
             // Cmb_Estados
             // 
@@ -188,11 +194,6 @@
             resources.ApplyResources(Cmb_Estados, "Cmb_Estados");
             Cmb_Estados.Items.AddRange(new object[] { resources.GetString("Cmb_Estados.Items"), resources.GetString("Cmb_Estados.Items1") });
             Cmb_Estados.Name = "Cmb_Estados";
-            // 
-            // Txt_Telefone
-            // 
-            resources.ApplyResources(Txt_Telefone, "Txt_Telefone");
-            Txt_Telefone.Name = "Txt_Telefone";
             // 
             // Lbl_Uf
             // 
@@ -537,7 +538,6 @@
         private Label Lbl_Uf;
         private TextBox Txt_Cidade;
         private Label Lbl_Cidade;
-        private TextBox Txt_Bairro;
         private Label Lbl_Bairo;
         private TextBox Txt_Numero;
         private Label Lbl_Numero;
@@ -556,7 +556,6 @@
         private TextBox Txt_SiteQUali2;
         private TextBox Txt_Curso4;
         private TextBox Txt_SiteQUali4;
-        private TextBox Txt_Telefone;
         private ComboBox Cmb_Estados;
         private Label label1;
         private Label label2;
@@ -572,7 +571,6 @@
         private DataGridViewButtonColumn Buscar;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nome;
-        private TextBox Txt_cep;
         private TextBox txt_InformeBlog;
         private Label Lbl_InformeBlog;
         private ComboBox Cmb_Blog;
@@ -584,5 +582,8 @@
         private ComboBox Cmb_Emprego;
         private Label Lbl_PrimeiroEmprego;
         private GroupBox groupBox1;
+        private MaskedTextBox Msk_Telefone;
+        private MaskedTextBox msk_Cep;
+        private TextBox Txt_Bairro;
     }
 }

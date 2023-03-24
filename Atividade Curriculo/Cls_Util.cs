@@ -17,7 +17,7 @@ namespace Atividade_Curriculo
             public static bool ValidarTelefone(string teleofne)
             {
                 bool validar = false;
-                if (teleofne.Length == 11)
+                if (teleofne.Length == 15)
                 {
                     validar = true;
                 }
@@ -102,7 +102,7 @@ namespace Atividade_Curriculo
             public static bool ValidarCep(string CEP)
             {
                 bool validar = false;
-                if (CEP.Length == 8)
+                if (CEP.Length == 9)
                 {
                     validar = true;
                 }
@@ -112,6 +112,29 @@ namespace Atividade_Curriculo
                 }
                 return validar;
             }
+
+            //teste
+            public static string GeraJSONCEP(string CEP)
+            {
+                System.Net.HttpWebRequest requisicao = (HttpWebRequest)WebRequest.Create("https://viacep.com.br/ws/" + CEP + "/json/");
+                HttpWebResponse resposta = (HttpWebResponse)requisicao.GetResponse();
+
+                int cont;
+                byte[] buffer = new byte[1000];
+                StringBuilder sb = new StringBuilder();
+                string temp;
+                Stream stream = resposta.GetResponseStream();
+                do
+                {
+                    cont = stream.Read(buffer, 0, buffer.Length);
+                    temp = Encoding.Default.GetString(buffer, 0, cont).Trim();
+                    sb.Append(temp);
+
+                } while (cont > 0);
+                return sb.ToString();
+
+            }
+
 
             public static bool ValidaLogradouro(string Logradouro)
             {
